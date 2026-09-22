@@ -1,0 +1,64 @@
+sizeof(student) = 216 bytes
+压缩前 old_s 总长度 = 1080 bytes
+压缩前 old_s:
+name=吴基镕
+age=19
+score=41.000000
+remark=good
+
+name=stu2
+age=20
+score=42.000000
+remark=remark2
+
+name=stu3
+age=21
+score=43.000000
+remark=remark3
+
+name=stu4
+age=22
+score=44.000000
+remark=remark4
+
+name=stu5
+age=23
+score=45.000000
+remark=remark5
+pack_student_bytebybyte 压缩 2 人，字节数 = 37
+pack_student_whole      压缩 3 人，字节数 = 57
+压缩后 message 总长度 = 94 字节
+---- message 前40字节 ----
+0xCE 0xE2 0xBB 0xF9 0xE9 0x46 0x00 0x13 
+0x00 0x00 0x00 0x24 0x42 0x67 0x6F 0x6F 
+0x64 0x00 0x73 0x74 0x75 0x32 0x00 0x14 
+0x00 0x00 0x00 0x28 0x42 0x72 0x65 0x6D 
+0x61 0x72 0x6B 0x32 0x00 0x73 0x74 0x75 
+----------------
+解压人数 = 5
+解压后 new_s:
+name=吴基镕
+age=19
+score=41.000000
+remark=good
+
+name=stu2
+age=20
+score=42.000000
+remark=remark2
+
+name=stu3
+age=21
+score=43.000000
+remark=remark3
+
+name=stu4
+age=22
+score=44.000000
+remark=remark4
+
+name=stu5
+age=23
+score=45.000000
+remark=remark5
+old_s[0].score = 41.00, 小端内存字节: 00 00 24 42
