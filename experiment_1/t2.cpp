@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <limits.h>
 #include <string.h>
+#define VERIFY(a, b) do { ++total; if ((a) != (b)) ++failed; } while (0)
 // 32位补码实验：使用 -fwrapv 编译，有符号右移为算术右移。
 #define check(format,f1,f2) \
 	printf((format),(f1),(f2)); \
@@ -145,7 +146,6 @@ int boundary_check() {
     int values[] = {INT_MIN, INT_MIN + 1, -256, -1, 0,
                     1, 2, 7, 255, INT_MAX - 1, INT_MAX};
     int total = 0, failed = 0;
-#define VERIFY(a, b) do { ++total; if ((a) != (b)) ++failed; } while (0)
     for (int x : values) {
         // INT_MIN 的数学绝对值不能用 int 表示。
         if (x != INT_MIN) VERIFY(absVal(x), absVal_standard(x));
