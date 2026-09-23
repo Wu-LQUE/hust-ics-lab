@@ -1,6 +1,5 @@
 set pagination off
 set debuginfod enabled off
-set target-charset GBK
 break print_hex
 run
 up

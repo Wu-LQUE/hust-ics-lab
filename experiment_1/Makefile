@@ -1,16 +1,18 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -g -O2 -fwrapv
+CXXFLAGS = -std=c++17 -Wall -Wextra -g
 
 all: t1 t2
 
-t1: t1.cpp
-	$(CXX) $(CXXFLAGS) -fexec-charset=GBK $< -o $@
+t2: CXXFLAGS += -fwrapv
 
-t2: t2.cpp
+t1 t2: %: %.cpp Makefile
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 run: all
-	./t1 | iconv -f GBK -t UTF-8
+	./t1
 	./t2
 
-.PHONY: all run
+clean:
+	rm -f t1 t2
+
+.PHONY: all run clean

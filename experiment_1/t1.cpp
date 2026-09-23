@@ -19,7 +19,6 @@ void print_hex(const char *title, char *buf, int n); // 标题，缓冲区，长
 void init_old_s() {
 	for (int i = 0; i < N; ++i) {
 		if (i == 0) {
-			// 按 Makefile 使用 GBK 执行字符集，姓名占6字节，含结束符共7字节。
 			strcpy(old_s[i].name, "wjr");
 			old_s[i].age = 19;
 			old_s[i].score = 41;
